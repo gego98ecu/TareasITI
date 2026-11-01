@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Callbacks</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h1>Callbacks</h1>
+  <p>Un <b>callback</b> es una función que se le pasa a otra para que la ejecute <b>cuando termine algo</b>. Aquí: saludar después de 2 segundos.</p>
+
+  <button onclick="iniciar()">Iniciar saludo</button>
+  <ol id="pasos"></ol>
+
+  <p>Mientras esperas, prueba que la página sigue viva:</p>
+  <button class="gris" onclick="contarClic()">Clics: <span id="clics">0</span></button>
+
+  <div class="caja">
+    <h2>¿Qué está pasando?</h2>
+    <p><b>1.</b> Al pulsar el botón se escribe "Iniciando".</p>
+    <p><b>2.</b> <code>esperarYSaludar</code> recibe una función (el callback) y se la entrega a <code>setTimeout</code>.</p>
+    <p><b>3.</b> JavaScript no se detiene: durante 2 segundos puedes seguir haciendo clic en el otro botón.</p>
+    <p><b>4.</b> Pasado el tiempo, JavaScript "devuelve la llamada" y ejecuta el callback: <code>alTerminar</code>. Ahí aparece "Terminado".</p>
+  </div>
+
+  <script id="codigo">
+function alTerminar() 
+{
+  agregar("Terminado: ¡Hola! (esto lo hizo el callback)");
+}
+
+function esperarYSaludar(callback) 
+{
+  agregar("Esperando 2 segundos...");
+  setTimeout(callback, 2000);
+}
+
+function iniciar() 
+{
+  pasos.innerHTML = "";
+  agregar("Iniciando");
+  esperarYSaludar(alTerminar); 
+}
+  </script>
+
+  <script>
+    const pasos = document.getElementById("pasos");
+    let clics = 0;
+
+    function agregar(texto) 
+    {
+      pasos.innerHTML += "<li>" + texto + "</li>";
+    }
+
+    function contarClic() {
+      clics++;
+      document.getElementById("clics").textContent = clics;
+    }
+  </script>
+</body>
+</html>

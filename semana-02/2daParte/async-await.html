@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Async/await</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h1>Async/await</h1>
+  <p><b>async/await</b> permite escribir código que espera, pero que se lee como si fuera paso a paso. Aquí esperamos un mensaje durante 2 segundos.</p>
+
+  <button onclick="iniciar()">Esperar mensaje</button>
+  <ol id="pasos"></ol>
+
+  <p>Mientras esperas, prueba que la página sigue viva:</p>
+  <button class="gris" onclick="contarClic()">Clics: <span id="clics">0</span></button>
+
+  <div class="caja">
+    <h2>¿Qué está pasando?</h2>
+    <p><b>1.</b> <code>async</code> antes de la función le avisa a JavaScript que dentro habrá esperas.</p>
+    <p><b>2.</b> <code>await</code> significa "espera aquí hasta que la promesa termine". La función se pausa, pero <b>la página no</b>: puedes seguir haciendo clic.</p>
+    <p><b>3.</b> Cuando pasan los 2 segundos, <code>await</code> te entrega el mensaje y la función continúa con la línea siguiente.</p>
+  </div>
+
+  <script id="codigo">
+function esperarMensaje() 
+{
+  return new Promise(function (resolve) 
+  {
+    setTimeout(function () {
+      resolve("¡Mensaje recibido!");
+    }, 2000);
+  });
+}
+
+async function iniciar() 
+{
+  pasos.innerHTML = "";
+  agregar("Iniciando");
+  agregar("Esperando el mensaje (await)...");
+
+  const mensaje = await esperarMensaje(); 
+
+  agregar("Terminado: " + mensaje);
+}
+  </script>
+
+  <script>
+    const pasos = document.getElementById("pasos");
+    let clics = 0;
+
+    function agregar(texto) 
+    {
+      pasos.innerHTML += "<li>" + texto + "</li>";
+    }
+
+    function contarClic() {
+      clics++;
+      document.getElementById("clics").textContent = clics;
+    }
+  </script>
+</body>
+</html>

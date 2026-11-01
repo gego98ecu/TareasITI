@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promesas</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h1>Promesas</h1>
+  <p>Una <b>promesa</b> es un objeto que dice: "te aviso cuando termine, y te diré si salió bien o mal". Aquí simulamos una operación de 2 segundos.</p>
+
+  <button class="verde" onclick="iniciar(true)">Probar que funciona</button>
+  <button class="rojo" onclick="iniciar(false)">Probar que falla</button>
+  <ol id="pasos"></ol>
+
+  <p>Mientras esperas, prueba que la página sigue viva:</p>
+  <button class="gris" onclick="contarClic()">Clics: <span id="clics">0</span></button>
+
+  <div class="caja">
+    <h2>¿Qué está pasando?</h2>
+    <p><b>1.</b> <code>operacion</code> devuelve una <b>promesa</b>: una "caja" que se abrirá en 2 segundos.</p>
+    <p><b>2.</b> Mientras tanto la página sigue respondiendo (prueba el botón de clics).</p>
+    <p><b>3.</b> Si todo sale bien, la promesa llama a <code>resolve</code> y se ejecuta el <code>.then</code>.</p>
+    <p><b>4.</b> Si algo sale mal, llama a <code>reject</code> y se ejecuta el <code>.catch</code>.</p>
+  </div>
+
+  <script id="codigo">
+// Devuelve una PROMESA que tarda 2 segundos en cumplirse o fallar
+function operacion(debeFuncionar) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      if (debeFuncionar) {
+        resolve("Salió bien");  // la promesa se cumplió
+      } else {
+        reject("Algo falló");   // la promesa falló
+      }
+    }, 2000);
+  });
+}
+
+function iniciar(debeFuncionar) {
+  pasos.innerHTML = "";
+  agregar("Iniciando");
+  agregar("Esperando 2 segundos...");
+
+  operacion(debeFuncionar)
+    .then(function (mensaje) 
+    { 
+      agregar("Terminado con éxito: " + mensaje);
+    })
+    .catch(function (error) 
+    {  
+      agregar("Terminado con error: " + error);
+    });
+}
+  </script>
+
+  <script>
+    const pasos = document.getElementById("pasos");
+    let clics = 0;
+
+    function agregar(texto) {
+      pasos.innerHTML += "<li>" + texto + "</li>";
+    }
+
+    function contarClic() {
+      clics++;
+      document.getElementById("clics").textContent = clics;
+    }
+  </script>
+</body>
+</html>
