@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Enlaces solo del header y del footer (no de toda la página) */
+header a,
+footer a {
+    color: black;
+    text-decoration: none;
+    margin: 10px;
+}
+
+header a:hover,
+footer a:hover {
+    text-decoration: underline;
+}
+
+header {
+    text-align: right;
+    padding: 15px;
+}
+
+main {
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* Imagen solo dentro de main; se reduce si la pantalla es pequeña */
+main img {
+    width: 270px;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Campo de búsqueda: display block reemplaza al <br> del HTML */
+form input {
+    display: block;
+    width: 400px;
+    max-width: 100%;
+    box-sizing: border-box; /* el padding y el borde ya no agrandan el ancho */
+    margin: 0 auto 20px auto; /* auto a los lados lo centra */
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid gray;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #4285f4;
+}
+
+form button {
+    padding: 10px;
+    background: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    cursor: pointer;
+}
+
+form button:hover {
+    border-color: gray;
+}
+
+footer p {
+    margin: 0 20px 0 10px;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+    padding: 15px;
+    margin-top: 100px;
+}
