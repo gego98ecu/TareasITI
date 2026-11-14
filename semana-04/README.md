@@ -5,7 +5,6 @@ Sistema Académico ITI en React.js: módulos de **Estudiantes** y **Materias** c
 ## Contenido
 
 - [sistema-academico-iti/](sistema-academico-iti/): proyecto React + Vite.
-- [CONTROL_DE_CAMBIOS.md](sistema-academico-iti/CONTROL_DE_CAMBIOS.md): detalle de todos los cambios realizados y su explicación.
 
 ## Actividades
 
