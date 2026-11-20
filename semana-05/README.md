@@ -23,7 +23,11 @@ npm install
 npm run dev
 ```
 
-Abrir http://localhost:5173/, pulsar **Ingresar al sistema** y elegir **Materias** en el menú.
+Abrir http://localhost:5173/, ingresar con las credenciales y elegir **Materias** en el menú.
+
+| Correo | Contraseña |
+|---|---|
+| `correo@iti.edu.ec` | `012345` |
 
 ## Evidencias
 

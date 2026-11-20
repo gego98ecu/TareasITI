@@ -48,7 +48,16 @@ Si el archivo `.env` no existe, la aplicación usa esa misma URL por defecto.
 npm run dev
 ```
 
-Abrir http://localhost:5173/, pulsar **Ingresar al sistema** y elegir **Materias** en el menú.
+Abrir http://localhost:5173/, ingresar con las credenciales de acceso y elegir **Materias** en el menú.
+
+## Credenciales de acceso
+
+| Campo | Valor |
+|---|---|
+| Correo | `correo@iti.edu.ec` |
+| Contraseña | `012345` |
+
+El inicio de sesión valida que ambos campos estén llenos, que el correo tenga un formato válido y que las credenciales sean correctas. Son credenciales de demostración, definidas en `src/pages/Login.jsx`.
 
 > La API solo acepta peticiones desde `http://localhost:5173`. Si Vite arranca en otro puerto, cierre el otro proceso que usa el 5173.
 >
