@@ -31,11 +31,11 @@ Prueba realizada con la materia de prueba `DG001`, que se eliminó al final.
 
 | Operación | Captura |
 |---|---|
-| Listado | [01-listado.png](evidencias/01-listado.png) |
-| Registro: formulario | [02-registro-formulario.png](evidencias/02-registro-formulario.png) |
-| Registro: resultado | [03-registro-exitoso.png](evidencias/03-registro-exitoso.png) |
-| Edición: formulario con datos y código bloqueado | [04-edicion-formulario.png](evidencias/04-edicion-formulario.png) |
-| Eliminación: confirmación | [05-eliminacion-confirmacion.png](evidencias/05-eliminacion-confirmacion.png) |
-| Eliminación: resultado | [06-eliminacion-exitosa.png](evidencias/06-eliminacion-exitosa.png) |
+| Listado | [01-listado.png](../semana-04/sistema-academico-iti/evidencias/01-listado.png) |
+| Registro: formulario | [02-registro-formulario.png](../semana-04/sistema-academico-iti/evidencias/02-registro-formulario.png) |
+| Registro: resultado | [03-registro-exitoso.png](../semana-04/sistema-academico-iti/evidencias/03-registro-exitoso.png) |
+| Edición: formulario con datos y código bloqueado | [04-edicion-formulario.png](../semana-04/sistema-academico-iti/evidencias/04-edicion-formulario.png) |
+| Eliminación: confirmación | [05-eliminacion-confirmacion.png](../semana-04/sistema-academico-iti/evidencias/05-eliminacion-confirmacion.png) |
+| Eliminación: resultado | [06-eliminacion-exitosa.png](../semana-04/sistema-academico-iti/evidencias/06-eliminacion-exitosa.png) |
 
 [Volver al índice](../README.md)
